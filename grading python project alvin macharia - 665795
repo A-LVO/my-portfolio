@@ -1,0 +1,33 @@
+
+def calculate_grade(score):
+    if score >= 80:
+        return 'A'
+    elif 70 <= score < 80:
+        return 'B'
+    elif 60 <= score < 70:
+        return 'C'
+    elif 50 <= score < 60:
+        return 'D'
+    elif 40 <= score < 50:
+        return 'E'
+    else:
+        return 'F'
+
+def main():
+    while True:
+        try:
+            marks = float(input("Enter marks (or 'q' to quit): "))
+            if marks == 'q':
+                print("Exiting program.")
+                break
+            if marks < 0 or marks > 100:
+                print("Marks should be between 0 and 100.")
+                continue
+            grade = calculate_grade(marks)
+            print("Grade for marks {}: {}".format(marks, grade))
+        except ValueError:
+            print("Invalid input. Please enter a valid number or 'q' to quit.")
+
+if __name__ == "__main__":
+    main()
+
